@@ -23,8 +23,7 @@ SELECT
     cg.category_name 
 FROM competitions ct
 LEFT JOIN categories cg ON ct.category_id = cg.category_id;
-'''
-
+```
 
 ### Result Data
 * **Full Query Output:** [`../outputs/q1_List all competitions along with their category name`](../outputs/q1_List all competitions along with their category name)
