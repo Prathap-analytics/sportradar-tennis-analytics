@@ -5,9 +5,8 @@
 
 ---
 
-## Files in this Directory
-* [`schema.sql`](./schema.sql) — DDL scripts for table structures, primary keys, and relational constraints.
-* [`business_queries.sql`](./business_queries.sql) — Comprehensive collection of executable analytical SQL queries.
+* [schema.sql](./schema.sql) – DDL scripts for table structures, primary keys, and relational constraints.
+* [business_queries.sql](./business_queries.sql) – Comprehensive collection of executable analytical SQL queries.
 
 ---
 
