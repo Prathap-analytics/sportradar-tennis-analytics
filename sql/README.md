@@ -22,7 +22,8 @@ SELECT
     ct.*, 
     cg.category_name 
 FROM competitions ct
-LEFT JOIN categories cg ON ct.category_id = cg.category_id;'''
+LEFT JOIN categories cg ON ct.category_id = cg.category_id;
+'''
 
 
 ### Result Data
