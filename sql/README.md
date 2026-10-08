@@ -68,3 +68,25 @@ WHERE type = 'doubles';
 
 ### Business Insights
 The query retrieves 2,000 doubles competitions, confirming that all records in the dataset strictly belong to the doubles event type. Men's events make up 55.95% (1,119) of the total doubles competitions, while women's events account for the remaining 44.05% (881).
+
+---
+## 4. Get Competitions That Belong to a Specific Category (ITF Men)
+
+### Business Question
+What is the internal distribution between singles and doubles formats within the ITF Men category?
+
+### SQL Query
+```sql
+SELECT 
+    ct.competition_name, 
+    cg.category_name 
+FROM competitions ct
+LEFT JOIN categories cg ON ct.category_id = cg.category_id
+WHERE cg.category_name = 'ITF Men'; 
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q4_Get_competitions_that_belong_to_a_specific_category_e.g_ITF_Men.csv`](../outputs/q4_Get_competitions_that_belong_to_a_specific_category_e.g_ITF_Men.csv)
+
+### Business Insights
+The output retrieves all 2,000 competitions filtered specifically under the ITF Men category. The filtered dataset shows an almost perfect 1:1 balance between event formats, containing 1,000 doubles and 999 singles competitions across international circuit locations.
