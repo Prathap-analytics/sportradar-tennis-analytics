@@ -90,3 +90,73 @@ WHERE cg.category_name = 'ITF Men';
 
 ### Business Insights
 The output retrieves all 2,000 competitions filtered specifically under the ITF Men category. The filtered dataset shows an almost perfect 1:1 balance between event formats, containing 1,000 doubles and 999 singles competitions across international circuit locations.
+
+---
+## 5. Identify Parent Competitions and Their Sub-Competitions
+
+### Business Question
+Are there hierarchical structural dependencies where sub-competitions are mapped under parent tournaments?
+
+### SQL Query
+```sql
+SELECT
+    parent.competition_id AS parent_competition_id,
+    parent.competition_name AS parent_competition_name,
+    sub.competition_id AS sub_competition_id,
+    sub.competition_name AS sub_competition_name,
+    sub.type AS sub_competition_type
+FROM competitions sub
+JOIN competitions parent ON sub.parent_id = parent.competition_id
+ORDER BY parent.competition_name, sub.competition_name;
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q5_Identify_parent_competitions_and_their_sub_competitions.csv`](../outputs/q5_Identify_parent_competitions_and_their_sub_competitions.csv)
+
+### Business Insights
+The output identifies a single parent-child tournament relationship in the dataset, linking ITF Romania F9, Men Singles as the parent event to ITF Romania F9, Men Doubles as its sub-competition. This single record highlights a structural dependency where the doubles event is configured as a secondary tournament under the primary singles competition format.
+
+---
+## 6. Analyze the distribution of competition types by category
+
+### Business Question
+How do match format types (singles, doubles, mixed) vary across category groups?
+
+### SQL Query
+```sql
+SELECT 
+    cg.category_name, 
+    ct.type, 
+    COUNT(*) AS total 
+FROM categories cg
+LEFT JOIN competitions ct ON cg.category_id = ct.category_id
+GROUP BY cg.category_name, ct.type;
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q6_Analyze_the_distribution_of_competition_types_by_category.csv`](../outputs/q6_Analyze_the_distribution_of_competition_types_by_category.csv)
+
+### Business Insights
+Standard circuit categories (ITF Men/Women, Challenger, WTA, ATP) maintain a near-perfect 1:1 balance between singles and doubles events, whereas UTR competitions operate exclusively as singles formats. Mixed and mixed doubles competitions are exceptionally rare across the dataset (18 total events, <0.3%), appearing almost entirely within special exhibition, ATP, and international team events (e.g., Hopman Cup, United Cup).
+
+---
+## 7. List all competitions with no parent (top-level competitions)
+
+### Business Question
+Which tournaments operate as top-level standalone fixtures without parent hierarchies?
+
+### SQL Query
+```sql
+SELECT 
+    competition_id, 
+    competition_name, 
+    parent_id 
+FROM competitions
+WHERE parent_id = 'Root';
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q7_List_all_competitions_with_no_parent_(top-level_competitions).csv`](../outputs/q7_List_all_competitions_with_no_parent_(top-level_competitions).csv)
+
+### Business Insights
+The dataset identifies 603 top-level competitions marked with parent_id as ROOT, representing standalone events operating independently without a parent tournament hierarchy. Universal Tennis Rating (UTR) events heavily dominate this category at 92.5% (558 competitions), while the remaining 7.5% comprises international team cups (e.g., Davis Cup, United Cup, Hopman Cup) and select exhibition or tour fixtures.
