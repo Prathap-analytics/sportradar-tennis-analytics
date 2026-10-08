@@ -160,3 +160,157 @@ WHERE parent_id = 'Root';
 
 ### Business Insights
 The dataset identifies 603 top-level competitions marked with parent_id as ROOT, representing standalone events operating independently without a parent tournament hierarchy. Universal Tennis Rating (UTR) events heavily dominate this category at 92.5% (558 competitions), while the remaining 7.5% comprises international team cups (e.g., Davis Cup, United Cup, Hopman Cup) and select exhibition or tour fixtures.
+
+---
+## 8. List all competitions with no parent (top-level competitions)
+
+### Business Question
+Which tournaments operate as top-level standalone fixtures without parent hierarchies?
+
+### SQL Query
+```sql
+SELECT 
+    competition_id, 
+    competition_name, 
+    parent_id 
+FROM competitions
+WHERE parent_id = 'Root';
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q7_List_all_competitions_with_no_parent_(top-level_competitions).csv`](../outputs/q7_List_all_competitions_with_no_parent_(top-level_competitions).csv)
+
+### Business Insights
+The dataset identifies 603 top-level competitions marked with parent_id as ROOT, representing standalone events operating independently without a parent tournament hierarchy. Universal Tennis Rating (UTR) events heavily dominate this category at 92.5% (558 competitions), while the remaining 7.5% comprises international team cups (e.g., Davis Cup, United Cup, Hopman Cup) and select exhibition or tour fixtures.
+
+---
+## 9. List all competitions with no parent (top-level competitions)
+
+### Business Question
+Which tournaments operate as top-level standalone fixtures without parent hierarchies?
+
+### SQL Query
+```sql
+SELECT 
+    competition_id, 
+    competition_name, 
+    parent_id 
+FROM competitions
+WHERE parent_id = 'Root';
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q7_List_all_competitions_with_no_parent_(top-level_competitions).csv`](../outputs/q7_List_all_competitions_with_no_parent_(top-level_competitions).csv)
+
+### Business Insights
+The dataset identifies 603 top-level competitions marked with parent_id as ROOT, representing standalone events operating independently without a parent tournament hierarchy. Universal Tennis Rating (UTR) events heavily dominate this category at 92.5% (558 competitions), while the remaining 7.5% comprises international team cups (e.g., Davis Cup, United Cup, Hopman Cup) and select exhibition or tour fixtures.
+
+---
+## 10. List all competitions with no parent (top-level competitions)
+
+### Business Question
+Which tournaments operate as top-level standalone fixtures without parent hierarchies?
+
+### SQL Query
+```sql
+SELECT 
+    competition_id, 
+    competition_name, 
+    parent_id 
+FROM competitions
+WHERE parent_id = 'Root';
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q7_List_all_competitions_with_no_parent_(top-level_competitions).csv`](../outputs/q7_List_all_competitions_with_no_parent_(top-level_competitions).csv)
+
+### Business Insights
+The dataset identifies 603 top-level competitions marked with parent_id as ROOT, representing standalone events operating independently without a parent tournament hierarchy. Universal Tennis Rating (UTR) events heavily dominate this category at 92.5% (558 competitions), while the remaining 7.5% comprises international team cups (e.g., Davis Cup, United Cup, Hopman Cup) and select exhibition or tour fixtures.
+
+---
+## 11. List all competitions with no parent (top-level competitions)
+
+### Business Question
+Which tournaments operate as top-level standalone fixtures without parent hierarchies?
+
+### SQL Query
+```sql
+SELECT 
+    competition_id, 
+    competition_name, 
+    parent_id 
+FROM competitions
+WHERE parent_id = 'Root';
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q7_List_all_competitions_with_no_parent_(top-level_competitions).csv`](../outputs/q7_List_all_competitions_with_no_parent_(top-level_competitions).csv)
+
+### Business Insights
+The dataset identifies 603 top-level competitions marked with parent_id as ROOT, representing standalone events operating independently without a parent tournament hierarchy. Universal Tennis Rating (UTR) events heavily dominate this category at 92.5% (558 competitions), while the remaining 7.5% comprises international team cups (e.g., Davis Cup, United Cup, Hopman Cup) and select exhibition or tour fixtures.
+
+---
+## 12. List all competitions with no parent (top-level competitions)
+
+### Business Question
+Which tournaments operate as top-level standalone fixtures without parent hierarchies?
+
+### SQL Query
+```sql
+SELECT 
+    competition_id, 
+    competition_name, 
+    parent_id 
+FROM competitions
+WHERE parent_id = 'Root';
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q7_List_all_competitions_with_no_parent_(top-level_competitions).csv`](../outputs/q7_List_all_competitions_with_no_parent_(top-level_competitions).csv)
+
+### Business Insights
+The dataset identifies 603 top-level competitions marked with parent_id as ROOT, representing standalone events operating independently without a parent tournament hierarchy. Universal Tennis Rating (UTR) events heavily dominate this category at 92.5% (558 competitions), while the remaining 7.5% comprises international team cups (e.g., Davis Cup, United Cup, Hopman Cup) and select exhibition or tour fixtures.
+
+---
+## 13. List all competitions with no parent (top-level competitions)
+
+### Business Question
+Which tournaments operate as top-level standalone fixtures without parent hierarchies?
+
+### SQL Query
+```sql
+SELECT 
+    competition_id, 
+    competition_name, 
+    parent_id 
+FROM competitions
+WHERE parent_id = 'Root';
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q7_List_all_competitions_with_no_parent_(top-level_competitions).csv`](../outputs/q7_List_all_competitions_with_no_parent_(top-level_competitions).csv)
+
+### Business Insights
+The dataset identifies 603 top-level competitions marked with parent_id as ROOT, representing standalone events operating independently without a parent tournament hierarchy. Universal Tennis Rating (UTR) events heavily dominate this category at 92.5% (558 competitions), while the remaining 7.5% comprises international team cups (e.g., Davis Cup, United Cup, Hopman Cup) and select exhibition or tour fixtures.
+
+---
+## 14. List all competitions with no parent (top-level competitions)
+
+### Business Question
+Which tournaments operate as top-level standalone fixtures without parent hierarchies?
+
+### SQL Query
+```sql
+SELECT 
+    competition_id, 
+    competition_name, 
+    parent_id 
+FROM competitions
+WHERE parent_id = 'Root';
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q7_List_all_competitions_with_no_parent_(top-level_competitions).csv`](../outputs/q7_List_all_competitions_with_no_parent_(top-level_competitions).csv)
+
+### Business Insights
+The dataset identifies 603 top-level competitions marked with parent_id as ROOT, representing standalone events operating independently without a parent tournament hierarchy. Universal Tennis Rating (UTR) events heavily dominate this category at 92.5% (558 competitions), while the remaining 7.5% comprises international team cups (e.g., Davis Cup, United Cup, Hopman Cup) and select exhibition or tour fixtures.
