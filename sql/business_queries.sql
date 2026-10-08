@@ -5,7 +5,7 @@ select ct.*,cg.category_name from competitions ct
 left join categories cg on ct.category_id=cg.category_id; 
 
 -- A2) Count the number of competitions in each category:
-select cg.category_name,count(ct.competition_id) as no_competitions from categories cg
+select cg.category_name,count(ct.competition_id) as no_of_competitions from categories cg
 left join competitions ct on cg.category_id=ct.category_id
 group by cg.category_name; 
 
