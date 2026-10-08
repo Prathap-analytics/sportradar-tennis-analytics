@@ -1,6 +1,6 @@
 # SQL & Database Analysis Module
 
-**Author:** R. Prathap (SQL & Database Analyst)  
+**Created By:** R. Prathap   
 **Project:** Sportradar Tennis Data Pipeline & Business Intelligence  
 
 ---
