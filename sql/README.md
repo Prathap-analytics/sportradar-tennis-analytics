@@ -39,7 +39,7 @@ What is the volume distribution of competitions across each category in the data
 ### SQL Query
 ```sql
 select cg.category_name,
-count(ct.competition_id) as no_competitions from categories cg 
+count(ct.competition_id) as no_of_competitions from categories cg 
 left join competitions ct on cg.category_id=ct.category_id 
 group by cg.category_name; 
 ```
