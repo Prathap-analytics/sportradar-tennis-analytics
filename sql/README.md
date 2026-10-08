@@ -49,3 +49,22 @@ group by cg.category_name;
 
 ### Business Insights
 The ITF Men (2,198) and ITF Women (2,032) categories dominate tournament volume, accounting for 63.2% of all 6,689 listed competitions, followed by Challenger events at 15.9% (1,065). Elite main-tour categories (ATP and WTA) comprise just 7.2% (484 competitions) combined, while team/exhibition events like the Davis Cup, Billie Jean King Cup, and Hopman Cup operate as single standalone fixtures.
+
+---
+## 3. Find All Competitions of Type 'Doubles'
+
+### Business Question
+What proportion of doubles competitions are represented across genders within the retrieved dataset?
+
+### SQL Query
+```sql
+SELECT * 
+FROM competitions
+WHERE type = 'doubles'; 
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q3_Find_all_competitions_of_type_doubles.csv`](../outputs/q3_Find_all_competitions_of_type_doubles.csv)
+
+### Business Insights
+The query retrieves 2,000 doubles competitions, confirming that all records in the dataset strictly belong to the doubles event type. Men's events make up 55.95% (1,119) of the total doubles competitions, while women's events account for the remaining 44.05% (881).
