@@ -448,7 +448,7 @@ WHERE r.points = (SELECT MAX(points) FROM competitor_rankings);
 ```
 
 ### Result Data
-* **Full Query Output:** [`../outputs/q20_Find_competitors_with_the_highest_points_ in_the_current_week.csv`](../outputs/q20_Find_competitors_with_the_highest_points_ in_the_current_week.csv)
+* **Full Query Output:** [`../outputs/q20_Find_competitors_with_the_highest_points_in_the_current_week.csv`](../outputs/q20_Find_competitors_with_the_highest_points_in_the_current_week.csv)
 
 ### Business Insights
 Katerina Siniakova from Czechia holds the highest total in the current week, leading all competitors with 11,350 points in women's doubles. Her point total places her firmly at Rank 1, establishing a substantial lead at the top of the global standings.
