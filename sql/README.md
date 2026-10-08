@@ -312,3 +312,143 @@ WHERE c.complex_name = 'Nacional';
 
 ### Business Insights
 The query returns a single venue entry (Cancha Central, ID sr:venue:70045) associated with the Nacional complex. This indicates that within the dataset, the Nacional complex has only one recorded and mapped court facility available.
+
+---
+## 15. Get all competitors with their rank and points.
+
+### Business Question
+What is the statistical correlation between player points and overall rank position?
+
+### SQL Query
+```sql
+SELECT 
+    c.competitor_id, 
+    c.name, 
+    r.rank_position, 
+    r.points 
+FROM competitors c
+LEFT JOIN competitor_rankings r ON c.competitor_id = r.competitor_id;
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q15_Get_all_competitors_with_their_rank_and_points.csv`](../outputs/q15_Get_all_competitors_with_their_rank_and_points.csv)
+
+### Business Insights
+The dataset features 1,000 competitors with a strong inverse relationship between rank and ranking points (r = -0.63), where top-ranked players hold over 10,000 points. Katerina Siniakova leads the standings with the highest score of 11,350 points (Rank 1), while the overall player pool averages 725.6 points across ranks spanning positions 1 through 500.
+
+---
+## 16. Find competitors ranked in the top 5
+
+### Business Question
+Which elite athletes occupy the top 5 ranking positions in international standings?
+
+### SQL Query
+```sql
+SELECT 
+    c.competitor_id, 
+    c.name, 
+    r.rank_position 
+FROM competitors c
+LEFT JOIN competitor_rankings r ON c.competitor_id = r.competitor_id
+ORDER BY rank_position ASC 
+LIMIT 5;
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q16_Find_competitors_ranked_in_the_top_5.csv`](../outputs/q16_Find_competitors_ranked_in_the_top_5.csv)
+
+### Business Insights
+The dataset highlights top-tier elite competitors led by three world Rank 1 athletes: Harri Heliovaara, Katerina Siniakova, and Henry Patten. The remaining positions are held by Taylor Townsend at Rank 2 and Neal Skupski at Rank 3, with ranks 4 and 5 having no entries in this specific subset.
+
+---
+## 17. List competitors with no rank movement (stable rank)
+
+### Business Question
+How many competitors maintained complete rank stability with zero net movement?
+
+### SQL Query
+```sql
+SELECT 
+    c.name, 
+    r.movement 
+FROM competitors c
+LEFT JOIN competitor_rankings r ON c.competitor_id = r.competitor_id
+WHERE r.movement = 0;
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q17_List_competitors_with_no_rank_movement_(stable_rank).csv`](../outputs/q17_List_competitors_with_no_rank_movement_(stable_rank).csv)
+
+### Business Insights
+The dataset identifies 117 competitors who maintained a completely stable rank with zero net movement (movement = 0). This group features top-tier doubles specialists, including Harri Heliovaara, Henry Patten, and Neal Skupski, reflecting high rank stability at the peak of the standings.
+
+---
+## 18. Get the total points of competitors from a specific country (e.g., Croatia)
+
+### Business Question
+What is the aggregate points total accumulated by players representing Croatia?
+
+### SQL Query
+```sql
+SELECT 
+    c.country, 
+    SUM(r.points) AS Total_Points 
+FROM competitors c
+LEFT JOIN competitor_rankings r ON c.competitor_id = r.competitor_id
+WHERE country = 'croatia';
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q18_Get_the_total_points_of_competitors_from_a_specific_country_(e.g_Croatia).csv`](../outputs/q18_Get_the_total_points_of_competitors_from_a_specific_country_(e.g_Croatia).csv)
+
+### Business Insights
+Competitors representing Croatia have accumulated a combined total of 11,917 ranking points across the dataset. This significant point tally highlights a strong collective performance from Croatian players within international ranking standings.
+
+---
+## 19. Count the number of competitors per country
+
+### Business Question
+Which nations contribute the highest number of competitors to the global player pool?
+
+### SQL Query
+```sql
+SELECT 
+    country, 
+    COUNT(competitor_id) AS No_of_competitors 
+FROM competitors
+GROUP BY country
+ORDER BY No_of_competitors DESC;
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q19_Count_the_number_of_competitors_per_country.csv`](../outputs/q19_Count_the_number_of_competitors_per_country.csv)
+
+### Business Insights
+The USA leads overall athlete representation with 106 competitors (10.6%), followed by Great Britain (52) and France (48) across 73 represented nations. Together, the top three countries account for over 20.6% (206 competitors) of the entire 1,000-player global pool, demonstrating significant geographical concentration in player representation.
+
+---
+## 20. Find competitors with the highest points in the current week
+
+### Business Question
+Which competitor currently holds the maximum individual ranking points globally?
+
+### SQL Query
+```sql
+SELECT 
+    c.competitor_id, 
+    c.name, 
+    c.country, 
+    r.type, 
+    r.gender, 
+    r.points, 
+    r.rank_position
+FROM competitor_rankings r
+LEFT JOIN competitors c ON r.competitor_id = c.competitor_id
+WHERE r.points = (SELECT MAX(points) FROM competitor_rankings);
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q20_Find_competitors_with_the_highest_points_ in_the_current_week.csv`](../outputs/q20_Find_competitors_with_the_highest_points_ in_the_current_week.csv)
+
+### Business Insights
+Katerina Siniakova from Czechia holds the highest total in the current week, leading all competitors with 11,350 points in women's doubles. Her point total places her firmly at Rank 1, establishing a substantial lead at the top of the global standings.
