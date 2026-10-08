@@ -30,3 +30,22 @@ LEFT JOIN categories cg ON ct.category_id = cg.category_id;
 ### Business Insights
 The dataset contains 2,000 competitions mapped across 10 unique category names, heavily dominated by lower-tier developmental tours.ITF Men (59.6%) and ITF Women (24.2%) form the vast majority (83.8%) of all listed competitions, while elite professional categories like ATP and WTA account for less than 4% combined. Additionally, the coverage is evenly split between singles (49.9%) and doubles (50.1%) events, though male competitions dominate the overall dataset (72.2%)
 
+
+## 2. Count the number of competitions in each category
+
+### Business Question
+What is the volume distribution of competitions across each category in the dataset?
+
+### SQL Query
+```sql
+select cg.category_name,
+count(ct.competition_id) as no_competitions from categories cg 
+left join competitions ct on cg.category_id=ct.category_id 
+group by cg.category_name; 
+```
+
+### Result Data
+* **Full Query Output:** [`../outputs/q2_Count_the_number_of_competitions_in_each_category.csv`](../outputs/q2_Count_the_number_of_competitions_in_each_category.csv)
+
+### Business Insights
+The ITF Men (2,198) and ITF Women (2,032) categories dominate tournament volume, accounting for 63.2% of all 6,689 listed competitions, followed by Challenger events at 15.9% (1,065). Elite main-tour categories (ATP and WTA) comprise just 7.2% (484 competitions) combined, while team/exhibition events like the Davis Cup, Billie Jean King Cup, and Hopman Cup operate as single standalone fixtures.
